@@ -5,6 +5,17 @@ function onInstall() {
   setup();
 }
 
+/** Create a starter spreadsheet */
+function createExampleSpreadsheet() {
+  const ss = SpreadsheetApp.create('ATT Bonus & Holiday Pay');
+  const sheets = ['UKGDat', 'Absenses', 'Holiday', 'MonthlyBonus', 'AnnualBonus'];
+  ss.getSheets()[0].setName(sheets[0]);
+  for (let i = 1; i < sheets.length; i++) {
+    ss.insertSheet(sheets[i]);
+  }
+  return ss.getUrl();
+}
+
 /** Setup - ensures nightly trigger and sheet setup */
 function setup() {
   const ss = SpreadsheetApp.getActive();
