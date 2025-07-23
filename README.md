@@ -20,3 +20,7 @@ required sheets (`UKGDat`, `Absenses`, `Holiday`, `MonthlyBonus`,
 There are no automated tests. Functionality should be verified manually in the
 Apps Script editor after making changes.
 
+
+## Contributing
+
+See [AGENTS.md](AGENTS.md) for how to get started and tips for making changes.
