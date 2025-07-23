@@ -1,6 +1,22 @@
 # AT Bonus & Holiday Pay
 
-This repo contains a simple Google Apps Script project and HTML interface used to manage employee bonuses and holiday pay data. The `Code.gs` file holds the backend logic and `index.html` provides a small dashboard for viewing and editing information.
+This repository stores a Google Apps Script project that automates the monthly
+and annual bonus calculations for employees. It also determines eligibility for
+holiday pay. The script runs inside a Google Spreadsheet where each sheet acts
+as a lightweight database.
 
-The project does not have any external build steps or test requirements.
+* `Code.gs` &ndash; Apps Script backend that imports roster data, records
+  absences, tracks holidays and computes bonus amounts.
+* `index.html` &ndash; A small single page app served by `doGet()` providing a
+  dashboard, roster import and reporting tools.
+* `ATT Bonus & Holiday Pay.xlsx` &ndash; Example spreadsheet containing the
+  expected sheet layout.
+
+To use the project, open the spreadsheet in Google Sheets and attach this Apps
+Script project. The `setup()` function creates nightly triggers and ensures the
+required sheets (`UKGDat`, `Absenses`, `Holiday`, `MonthlyBonus`,
+`AnnualBonus`) exist.
+
+There are no automated tests. Functionality should be verified manually in the
+Apps Script editor after making changes.
 
